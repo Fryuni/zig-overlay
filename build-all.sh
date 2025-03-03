@@ -6,11 +6,9 @@ set -exo pipefail
 mapfile -t targets < <(
 	nix flake show --json --all-systems | jq '
 		["packages", "devShells"] as $tops |
+		"x84_64-linux" as $arch |
 		$tops[] as $top |
-		.[$top] |
-		to_entries[] |
-		.key as $arch |
-		.value |
+		.[$top][$arch] |
 		keys[] |
 		".#\($top).\($arch).\"\(.)\""
 		' -r
