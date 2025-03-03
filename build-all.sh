@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -p cachix jq  -i bash
+#! nix-shell -p jq  -i bash
 
 set -exo pipefail
 
@@ -18,5 +18,5 @@ mapfile -t targets < <(
 
 echo "Targets:" "${targets[@]}"
 
-nix build --no-link --print-out-paths "${targets[@]}" "${@:2}" |
-	cachix push zig-overlay
+nix build --no-link --print-out-paths "${targets[@]}"
+# cachix push zig-overlay
