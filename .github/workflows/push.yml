@@ -33,4 +33,4 @@ jobs:
 
       # Verify the update script WORKS but we don't actually commit anything
       # in the test job.
-      - run: ./cache-all
+      - run: ./build-all.sh
