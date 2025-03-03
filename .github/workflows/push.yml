@@ -30,6 +30,8 @@ jobs:
           name: zig-overlay
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
           extraPullNames: nix-community
+          useDaemon: false
+          skipPush: true
 
       # Verify the update script WORKS but we don't actually commit anything
       # in the test job.
