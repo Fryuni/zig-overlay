@@ -39,6 +39,9 @@
           dontConfigure = true;
           dontBuild = true;
           dontFixup = true;
+          unpackPhase = ''
+            tar -xf "$src"
+          '';
           installPhase = ''
             mkdir -p $out/{doc,bin,lib}
             [ -d docs ] && cp -r docs/* $out/doc

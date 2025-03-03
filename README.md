@@ -27,6 +27,12 @@ I don't know whether Mitchell no longer uses his overlay or if the overlay works
 I made this fork for me to keep it up to date, merge the PRs people have been sending to upstream and make some improvements myself.
 This was mostly for myself, but if others want to send PRs with features or fixes it is all welcome :)
 
+### Notable changes
+
+- `env` shebang is replaced with a stable nix-store reference (from [this pr](https://github.com/mitchellh/zig-overlay/pull/62))
+- Pruned old versions of zig nightly build (pruned to 2025-03-02), newer versions are added daily
+- All zig packages have a zls package inside of it if there is a zls build compatible with it (e.g. `master-2025-03-02` has `master-2025-03-02.zls`)
+
 ## Usage
 
 ### Flake
