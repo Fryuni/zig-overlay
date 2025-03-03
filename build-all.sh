@@ -16,7 +16,8 @@ mapfile -t targets < <(
 		' -r
 )
 
-echo "Targets:" "${targets[@]}"
-
-nix build --no-link --print-out-paths "${targets[@]}"
-# cachix push zig-overlay
+for target in "${targets[@]}"; do
+	{
+		nix -- build --no-link --print-out-paths "$target" || true
+	} | cachix push zig-overlay
+done
