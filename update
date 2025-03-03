@@ -1,57 +1,42 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -p curl jq minisign -i sh
-set -e
+set -exo pipefail
 
 # The well known public key for Zig
-PUBLIC_KEY="RWSGOq2NVecA2UPNdBUZykf1CCb147pkmdtYxgb3Ti+JO/wCYvhbAb/U"
+ZIG_PUBLIC_KEY="RWSGOq2NVecA2UPNdBUZykf1CCb147pkmdtYxgb3Ti+JO/wCYvhbAb/U"
+ZLS_PUBLIC_KEY="RWR+9B91GBZ0zOjh6Lr17+zKf5BoSuFvrx2xSeDE57uIYvnKBGmMjOex"
+
+rm -rf .update-data
+mkdir -p .update-data
+
+cd .update-data
 
 # Grab the JSON and parse the version
-rm -rf index.json index.json.minisig
-curl -s 'https://ziglang.org/download/index.json' > index.json
-VERSION=$(cat index.json | jq -r '.master.version')
+curl -s 'https://ziglang.org/download/index.json' > zig.json
+VERSION=$(cat zig.json | jq -r '.master.version')
 echo "Parsing master version: ${VERSION}"
 
 # Verify the signature of the JSON before we parse it
-curl -s "https://ziglang.org/builds/zig-${VERSION}-index.json.minisig" > index.json.minisig
-minisign -V -P ${PUBLIC_KEY} -x index.json.minisig -m index.json
+curl -s "https://ziglang.org/builds/zig-${VERSION}-index.json.minisig" > zig.json.minisig
+minisign -V -P ${ZIG_PUBLIC_KEY} -x zig.json.minisig -m zig.json
 
 # Build our new sources.json
-cat index.json | jq '
-["aarch64-linux", "x86_64-linux", "aarch64-macos", "x86_64-macos", "aarch64-windows", "x86_64-windows"] as $targets |
-def todarwin(x): x | gsub("macos"; "darwin");
-def toentry(vsn; x):
-  [(vsn as $version |
-    .value |
-    to_entries[] |
-    select(.key as $key | any($targets[]; . == $key)) | {
-      (todarwin(.key)): {
-        "url": .value.tarball,
-        "sha256": .value.shasum,
-        "version": $version,
-      }
-    }
-  )] | add | first(values, {});
+cat zig.json | jq -f ../source-gen.jq > zig.new.json
 
-reduce to_entries[] as $entry ({}; . * (
-  $entry | {
-    (.key): (
-      if (.key != "master") then
-        toentry(.key; .value)
-      else {
-        "latest": toentry(.value.version; .value),
-        (.value.date): toentry(.value.version; .value),
-      } end
-    )
-  }
-))
-' > sources.new.json
+### ZLS ###
+jq -n \
+  --slurpfile stable <(curl -s 'https://builds.zigtools.org/index.json') \
+  --slurpfile master <(curl -s "https://releases.zigtools.org/v1/zls/select-version?$(echo "$VERSION" | jq -R '"compatibility=only-runtime&zig_version=\(@uri)"' -r)") \
+  '$stable[0] * {master: $master[0]}' > zls.json
+
+cat zls.json | jq -f ../source-gen.jq > zls.new.json
 
 # For debugging
 # cat sources.new.json
 # exit
 
 # Copy the old file since jq can't modify in-place. This is also a backup.
-cp sources.json sources.old.json
-
-# Recursive merge
-jq -s '.[0] * .[1]' sources.old.json sources.new.json > sources.json
+cp ../zig.json zig.old.json
+jq -sS '.[0] * .[1]' zig.old.json zig.new.json > ../zig.json
+cp ../zls.json zls.old.json
+jq -sS '.[0] * .[1]' zls.old.json zls.new.json > ../zls.json
