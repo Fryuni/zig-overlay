@@ -12,9 +12,17 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
           nix_path: nixpkgs=channel:nixos-unstable
+      - uses: cachix/cachix-action@master
+        with:
+          name: zig-overlay
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+          extraPullNames: nix-community
+          useDaemon: false
+          skipPush: true
       - run: ./update
       - run: "git config user.email Fryuni@users.noreply.github.com"
       - run: "git config user.name 'Luiz Ferraz [bot]'"
       - run: "git add -A"
       - run: "git commit -m 'update sources.json' | true"
       - run: "git push -u origin main"
+      - run: ./build-all.sh

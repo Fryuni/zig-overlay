@@ -33,6 +33,4 @@ jobs:
           useDaemon: false
           skipPush: true
 
-      # Verify the update script WORKS but we don't actually commit anything
-      # in the test job.
       - run: ./build-all.sh
