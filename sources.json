@@ -464,24 +464,5 @@
       "sha256": "b378d0aae30cb54f28494e7bc4efbc9bfb6326f47bfb302e8b5287af777b2f3c",
       "version": "0.3.0"
     }
-  },
-  "0.2.0": {
-    "x86_64-windows": {
-      "url": "https://ziglang.org/download/0.2.0/zig-win64-0.2.0.zip",
-      "sha256": "4f8a2979941a1f081ec8e545cca0b72608c0db1c5a3fd377a94db40649dcd3d4",
-      "version": "0.2.0"
-    },
-    "x86_64-linux": {
-      "url": "https://ziglang.org/download/0.2.0/zig-linux-x86_64-0.2.0.tar.xz",
-      "sha256": "209c6fb745d42474c0a73d6f291c7ae3a38b6a1b6b641eea285a7f840cc1a890",
-      "version": "0.2.0"
-    }
-  },
-  "0.1.1": {
-    "x86_64-windows": {
-      "url": "https://ziglang.org/download/0.1.1/zig-win64-0.1.1.zip",
-      "sha256": "6fc88bef531af7e567fe30bf60da1487b86833cbee84c7a2f3e317030aa5b660",
-      "version": "0.1.1"
-    }
   }
 }
