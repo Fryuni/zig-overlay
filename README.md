@@ -58,6 +58,8 @@ $ nix run 'github:Fryuni/zig-overlay'
 $ nix shell 'github:Fryuni/zig-overlay#master-2021-02-13'
 # open a shell with latest nightly version
 $ nix shell 'github:Fryuni/zig-overlay#master'
+# open a shell with latest Mach nominated version
+$ nix shell 'github:Fryuni/zig-overlay#mach-latest'
 ```
 
 ### Adding zig as a package
@@ -83,14 +85,13 @@ In your `flake.nix` file:
 
 In your `configuration.nix` file :
 
-```nix
+````nix
     {pkgs,inputs, ...}: {
     ...
     environment.systemPackages = [
       pkgs.zigpkgs.master # or <version>/master-<date>/
     ]
 }
-```
 
 ### Compiler Development
 
@@ -110,7 +111,7 @@ $ nix develop
 # (2) If you have direnv installed, you can start the shell environment
 # in your active shell (fish, zsh, etc.):
 $ direnv allow
-```
+````
 
 ## FAQ
 
