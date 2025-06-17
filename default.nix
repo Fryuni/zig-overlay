@@ -114,7 +114,7 @@
     lib.attrsets.mapAttrs
     (k: v: mkBinaryInstall {inherit (v.${system}) version url sha256;})
     (lib.attrsets.filterAttrs (k: v: lib.strings.hasSuffix "mach" k)
-      (builtins.removeAttrs sources ["master"]));
+      (builtins.removeAttrs zigSources ["master"]));
 
   # This determines the latest /released/ version.
   latest = lib.lists.last (
