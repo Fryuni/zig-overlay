@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.WRITER_GITHUB_TOKEN }}
       - uses: cachix/install-nix-action@v31
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          github_access_token: ${{ secrets.WRITER_GITHUB_TOKEN }}
           nix_path: nixpkgs=channel:nixos-unstable
       - uses: cachix/cachix-action@master
         with:
