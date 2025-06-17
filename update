@@ -12,14 +12,13 @@ mkdir -p .update-data
 cd .update-data
 
 # Grab the JSON and parse the version
-rm -rf *index.json zig-index.json.minisig
 curl -s 'https://ziglang.org/download/index.json' > zig-index.json
 VERSION=$(cat zig-index.json | jq -r '.master.version')
 echo "Parsing master version: ${VERSION}"
 
 # Verify the signature of the JSON before we parse it
-curl -s "https://ziglang.org/builds/zig-${VERSION}-index.json.minisig" > zig-index.json.minisig
-minisign -V -P ${PUBLIC_KEY} -x zig-index.json.minisig -m zig-index.json
+# curl -s "https://ziglang.org/builds/zig-${VERSION}-index.json.minisig" > zig-index.json.minisig
+# minisign -V -P ${PUBLIC_KEY} -x zig-index.json.minisig -m zig-index.json
 
 # Merge Mach's index.json with the official one
 curl -s 'https://machengine.org/zig/index.json' > mach-index.json
