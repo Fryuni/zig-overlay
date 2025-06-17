@@ -77,10 +77,11 @@
   # The packages that are tagged releases
   taggedPackages =
     lib.attrsets.mapAttrs
-    (k: v: mkBinaryInstall {
-      inherit (v.${system}) version url sha256;
+    (k: v:
+      mkBinaryInstall {
+        inherit (v.${system}) version url sha256;
         zls = (zlsSources.${k} or {}).${system} or null;
-    })
+      })
     (lib.attrsets.filterAttrs
       (k: v:
         (builtins.hasAttr system v)
@@ -100,9 +101,9 @@
           else ("master-" + k)
         )
         (mkBinaryInstall {
-        inherit (v.${system}) version url sha256;
-        zls = (zlsSources.master.${k} or {}).${system} or null;
-      })
+          inherit (v.${system}) version url sha256;
+          zls = (zlsSources.master.${k} or {}).${system} or null;
+        })
     )
     (lib.attrsets.filterAttrs
       (k: v: (builtins.hasAttr system v) && (v.${system}.url != null))
@@ -112,7 +113,11 @@
   # https://machengine.org/docs/nominated-zig/
   machPackages =
     lib.attrsets.mapAttrs
-    (k: v: mkBinaryInstall {inherit (v.${system}) version url sha256;})
+    (k: v:
+      mkBinaryInstall {
+        inherit (v.${system}) version url sha256;
+        zls = null;
+      })
     (lib.attrsets.filterAttrs (k: v: lib.strings.hasSuffix "mach" k)
       (builtins.removeAttrs zigSources ["master"]));
 
