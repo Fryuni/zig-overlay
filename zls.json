@@ -324,16 +324,43 @@
         "version": "0.15.0-dev.247+7ab5a7ad"
       }
     },
-    "latest": {
+    "2025-07-01": {
       "aarch64-darwin": {
-        "sha256": "f0e7415f7e608fc4f282421642def4b77d9651a9a623b624f204d4cb32c52745",
-        "url": "https://builds.zigtools.org/zls-macos-aarch64-0.15.0-dev.247+7ab5a7ad.tar.xz",
-        "version": "0.15.0-dev.247+7ab5a7ad"
+        "sha256": "b5d45ef2bd2fe294033c3b5ba7c38074cff6cbf0693e00bea34a8065fb698832",
+        "url": "https://builds.zigtools.org/zls-macos-aarch64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
       },
       "aarch64-linux": {
-        "sha256": "78efe2ddf38676e5bd6d2f31642a04cb4742d48d855d8bbaab9e2d8ed3ad1d9f",
-        "url": "https://builds.zigtools.org/zls-linux-aarch64-0.15.0-dev.247+7ab5a7ad.tar.xz",
-        "version": "0.15.0-dev.247+7ab5a7ad"
+        "sha256": "43477bdd216a4134b4e0b92bf413c93e097063d60f42d980a5e23bfd23298b65",
+        "url": "https://builds.zigtools.org/zls-linux-aarch64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
+      },
+      "x86_64-darwin": {
+        "sha256": "fc036b5a441f63875df30c7628f4308ea8429124db0c04e2478081dccf503d3f",
+        "url": "https://builds.zigtools.org/zls-macos-x86_64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
+      },
+      "x86_64-linux": {
+        "sha256": "bbc19fadb05bbc7ef247b01086d52270fb703a52b57db5be56ab8f945b746d0b",
+        "url": "https://builds.zigtools.org/zls-linux-x86_64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
+      },
+      "x86_64-windows": {
+        "sha256": "87f856bbc3f3c4aca3622fd127037019b411ad85d19cf32d54520e1cd9d441c0",
+        "url": "https://builds.zigtools.org/zls-windows-x86_64-0.15.0-dev.251+59776e49.zip",
+        "version": "0.15.0-dev.251+59776e49"
+      }
+    },
+    "latest": {
+      "aarch64-darwin": {
+        "sha256": "b5d45ef2bd2fe294033c3b5ba7c38074cff6cbf0693e00bea34a8065fb698832",
+        "url": "https://builds.zigtools.org/zls-macos-aarch64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
+      },
+      "aarch64-linux": {
+        "sha256": "43477bdd216a4134b4e0b92bf413c93e097063d60f42d980a5e23bfd23298b65",
+        "url": "https://builds.zigtools.org/zls-linux-aarch64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
       },
       "aarch64-windows": {
         "sha256": "9036f80f2b39e49f1c589421c24bfeb8ab818e02a9be99672068cf9c573c443c",
@@ -341,19 +368,19 @@
         "version": "0.15.0-dev.203+706e08fc"
       },
       "x86_64-darwin": {
-        "sha256": "1d395308c147dfa450e81943569a512bdc573aa99f578e341d3517bc8bcc4894",
-        "url": "https://builds.zigtools.org/zls-macos-x86_64-0.15.0-dev.247+7ab5a7ad.tar.xz",
-        "version": "0.15.0-dev.247+7ab5a7ad"
+        "sha256": "fc036b5a441f63875df30c7628f4308ea8429124db0c04e2478081dccf503d3f",
+        "url": "https://builds.zigtools.org/zls-macos-x86_64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
       },
       "x86_64-linux": {
-        "sha256": "89915ac95c0510b8e85cc06d42256a4502aec7cf4466c88101fa95d601bb51e5",
-        "url": "https://builds.zigtools.org/zls-linux-x86_64-0.15.0-dev.247+7ab5a7ad.tar.xz",
-        "version": "0.15.0-dev.247+7ab5a7ad"
+        "sha256": "bbc19fadb05bbc7ef247b01086d52270fb703a52b57db5be56ab8f945b746d0b",
+        "url": "https://builds.zigtools.org/zls-linux-x86_64-0.15.0-dev.251+59776e49.tar.xz",
+        "version": "0.15.0-dev.251+59776e49"
       },
       "x86_64-windows": {
-        "sha256": "5669472337593e813e2a4748f5a93507ee3a24a361b9ba49e3280da8419adf48",
-        "url": "https://builds.zigtools.org/zls-windows-x86_64-0.15.0-dev.247+7ab5a7ad.zip",
-        "version": "0.15.0-dev.247+7ab5a7ad"
+        "sha256": "87f856bbc3f3c4aca3622fd127037019b411ad85d19cf32d54520e1cd9d441c0",
+        "url": "https://builds.zigtools.org/zls-windows-x86_64-0.15.0-dev.251+59776e49.zip",
+        "version": "0.15.0-dev.251+59776e49"
       }
     }
   }
