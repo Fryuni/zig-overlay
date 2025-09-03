@@ -2,11 +2,11 @@
   description = "Zig compiler binaries.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-25.05";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     # Used for shell.nix
     flake-compat = {
-      url = "github:edolstra/flake-compat";
+      url = "https://flakehub.com/f/edolstra/flake-compat/1";
       flake = false;
     };
   };
