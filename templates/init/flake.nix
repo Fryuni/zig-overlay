@@ -22,7 +22,7 @@
     overlays = [
       # Other overlays
       (final: prev: {
-        zigpkgs = inputs.zig.packages.${prev.system};
+        zigpkgs = inputs.zig.packages.${prev.stdenv.hostPlatform.system};
       })
     ];
 
