@@ -2105,36 +2105,68 @@
         "version": "0.16.0-dev.235+e9c9d819"
       }
     },
-    "latest": {
+    "2026-02-27": {
       "aarch64-darwin": {
-        "sha256": "546224d5be414354b48601aae8c06d5eb270d161d6a11559129d8b6a090a5185",
-        "url": "https://builds.zigtools.org/zls-aarch64-macos-0.16.0-dev.235+e9c9d819.tar.xz",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "1818dfc05f9a8dbc29dbc2c309d0cc0a38ae3f41d1f7def2e90ccd1d87e0cedd",
+        "url": "https://builds.zigtools.org/zls-aarch64-macos-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
       },
       "aarch64-linux": {
-        "sha256": "b2e4ca2217cbc34943b22a6e5c35e1f7b28bb1b55281a945c4d9bb1fe16288d7",
-        "url": "https://builds.zigtools.org/zls-aarch64-linux-0.16.0-dev.235+e9c9d819.tar.xz",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "52436a6a72f6501cefb031e162000c1a58cfb38d1d52587f570ea0ef8ad3b2b7",
+        "url": "https://builds.zigtools.org/zls-aarch64-linux-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
       },
       "aarch64-windows": {
-        "sha256": "fb0f63d3e78213c381eb04c81805dcc17004dccc7aaa88413a3e26c691a166d8",
-        "url": "https://builds.zigtools.org/zls-aarch64-windows-0.16.0-dev.235+e9c9d819.zip",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "b51d9fc4dc5aa46cfc22005f35d92dc98279b6359299b47b4ea845bb5a08e345",
+        "url": "https://builds.zigtools.org/zls-aarch64-windows-0.16.0-dev.237+3f66669f.zip",
+        "version": "0.16.0-dev.237+3f66669f"
       },
       "x86_64-darwin": {
-        "sha256": "80fa72cd63542ffba5bd06ea94935a5f8e5ca3993e608c78e4e7a55e9d755c15",
-        "url": "https://builds.zigtools.org/zls-x86_64-macos-0.16.0-dev.235+e9c9d819.tar.xz",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "824b0580516cf00773680d7c7fffe07b5c8946c5c099a75d12b39f090db9caee",
+        "url": "https://builds.zigtools.org/zls-x86_64-macos-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
       },
       "x86_64-linux": {
-        "sha256": "e16b4fac9bd0e627307b735c0a10f3838a5b1ba196a58732f13426c957428f6a",
-        "url": "https://builds.zigtools.org/zls-x86_64-linux-0.16.0-dev.235+e9c9d819.tar.xz",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "2d2a451e74a94f8e81e74da351215b8593c4fbd80cf1e525a112a4829e6041b7",
+        "url": "https://builds.zigtools.org/zls-x86_64-linux-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
       },
       "x86_64-windows": {
-        "sha256": "cb4919e975bb708b00ac83d3ce819dfc759810b3d587f3db2177e3a87d9d2d00",
-        "url": "https://builds.zigtools.org/zls-x86_64-windows-0.16.0-dev.235+e9c9d819.zip",
-        "version": "0.16.0-dev.235+e9c9d819"
+        "sha256": "ceba4de48e799fe2f72390351f631bef4dc950a7f36ac9fa18e166aee28a3007",
+        "url": "https://builds.zigtools.org/zls-x86_64-windows-0.16.0-dev.237+3f66669f.zip",
+        "version": "0.16.0-dev.237+3f66669f"
+      }
+    },
+    "latest": {
+      "aarch64-darwin": {
+        "sha256": "1818dfc05f9a8dbc29dbc2c309d0cc0a38ae3f41d1f7def2e90ccd1d87e0cedd",
+        "url": "https://builds.zigtools.org/zls-aarch64-macos-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
+      },
+      "aarch64-linux": {
+        "sha256": "52436a6a72f6501cefb031e162000c1a58cfb38d1d52587f570ea0ef8ad3b2b7",
+        "url": "https://builds.zigtools.org/zls-aarch64-linux-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
+      },
+      "aarch64-windows": {
+        "sha256": "b51d9fc4dc5aa46cfc22005f35d92dc98279b6359299b47b4ea845bb5a08e345",
+        "url": "https://builds.zigtools.org/zls-aarch64-windows-0.16.0-dev.237+3f66669f.zip",
+        "version": "0.16.0-dev.237+3f66669f"
+      },
+      "x86_64-darwin": {
+        "sha256": "824b0580516cf00773680d7c7fffe07b5c8946c5c099a75d12b39f090db9caee",
+        "url": "https://builds.zigtools.org/zls-x86_64-macos-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
+      },
+      "x86_64-linux": {
+        "sha256": "2d2a451e74a94f8e81e74da351215b8593c4fbd80cf1e525a112a4829e6041b7",
+        "url": "https://builds.zigtools.org/zls-x86_64-linux-0.16.0-dev.237+3f66669f.tar.xz",
+        "version": "0.16.0-dev.237+3f66669f"
+      },
+      "x86_64-windows": {
+        "sha256": "ceba4de48e799fe2f72390351f631bef4dc950a7f36ac9fa18e166aee28a3007",
+        "url": "https://builds.zigtools.org/zls-x86_64-windows-0.16.0-dev.237+3f66669f.zip",
+        "version": "0.16.0-dev.237+3f66669f"
       }
     }
   }
